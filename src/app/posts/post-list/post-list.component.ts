@@ -1,22 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription} from 'rxjs';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Subscription } from 'rxjs';
 
-import { Post } from '../post.model';
-import { PostsService } from '../posts.service';
+import { Post } from "../post.model";
+import { PostsService } from "../posts.service";
 
 @Component({
-  selector: 'app-post-list',
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.css']
+  selector: "app-post-list",
+  templateUrl: "./post-list.component.html",
+  styleUrls: ["./post-list.component.css"]
 })
-export class PostListComponent implements OnInit, OnDestroy{
-
+export class PostListComponent implements OnInit, OnDestroy {
   // posts = [
-  //   {title: "First Post", content: "Content"},
-  //   {title: "Second Post", content: "Content"},
-  //   {title: "Third Post", content: "Content"},
-  // ]
-
+  //   { title: "First Post", content: "This is the first post's content" },
+  //   { title: "Second Post", content: "This is the second post's content" },
+  //   { title: "Third Post", content: "This is the third post's content" }
+  // ];
   posts: Post[] = [];
   isLoading = false;
   private postsSub: Subscription;
@@ -40,5 +38,4 @@ export class PostListComponent implements OnInit, OnDestroy{
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
-
 }
